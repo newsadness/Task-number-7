@@ -1,0 +1,81 @@
+<DOCTYPE html> 
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Task number 2</title>
+        <link rel="stylesheet" href="DefaultTask2.css"> 
+    </head>
+    <body class="default">
+<div class="text"> Задача 2</div>
+        <table class="table"> 
+          <tr>
+              <td>
+              <p class="text2">
+                  Код программы: </br>
+Файл TetrahedronDrawing.java </br>
+import javax.swing.*; </br>
+import java.awt.*; </br>
+public class TetrahedronDrawing extends JPanel { </br>
+    @Override </br> 
+    protected void paintComponent(Graphics g) { </br>
+        super.paintComponent(g); </br>
+        Graphics2D g2d = (Graphics2D) g; </br>
+
+        int[][] points = { </br>
+                { 150, 80 }, </br>
+                { 50, 240 }, </br>
+                { 250, 220 }, </br>
+                { 180, 310 } </br>
+        }; </br>
+
+        g2d.setColor(Color.BLACK); </br>
+        Polygon rightFace = new Polygon(); </br>
+        rightFace.addPoint(points[0][0], points[0][1]); </br>
+        rightFace.addPoint(points[2][0], points[2][1]); </br>
+        rightFace.addPoint(points[3][0], points[3][1]); </br>
+        g2d.fillPolygon(rightFace); </br>
+ 
+        g2d.setColor(Color.BLACK); </br>
+        Polygon leftFace = new Polygon(); </br>
+        leftFace.addPoint(points[0][0], points[0][1]); </br>
+        leftFace.addPoint(points[1][0], points[1][1]); </br>
+        leftFace.addPoint(points[3][0], points[3][1]); </br>
+        g2d.drawPolygon(leftFace); </br>
+        float[] dashPattern = { 10, 10 }; </br>
+        g2d.setStroke(new BasicStroke(2, BasicStroke.CAP_BUTT, BasicStroke.JOIN_BEVEL, </br> 0, dashPattern, 0)); </br>
+
+        g2d.drawLine(points[1][0], points[1][1], points[2][0], points[2][1]); </br>
+    } </br>
+
+    public static void main(String[] args) { </br>
+        JFrame frame = new JFrame("Tetrahedr"); </br>
+        TetrahedronDrawing panel = new TetrahedronDrawing(); </br>
+        frame.add(panel); </br>
+        frame.setSize(400, 400); </br>
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); </br>
+        frame.setVisible(true); </br>
+    } </br>
+} </br>
+                  
+                  </p>
+
+
+          </td>
+          </tr>
+<tr> 
+    <td>
+    <p class="text"> Скриншот результата </p>
+    <img class="img" src="https://github.com/newsadness/Task-number-2/blob/main/2.png?raw=true">
+    </td>
+</tr>
+          <tr>
+             <td> 
+                 <a href="https://newsadness.github.io/1st-week/"> 
+                   <button class="button"> назад </button> 
+                 </a> 
+            </td>
+          </tr>
+        </table> 
+    </body>
+</html>
+</DOCTYPE>
